@@ -86,19 +86,16 @@ int main()
     std::cout.fill(' ');
 
     
-    std::cout << "\n-------------------------------------------------------------VALORES BOOL COMO TRUE O FALSE-FUNCION setf()\n";
+    std::cout << "\n----------------------------------------------------VALORES BOOL COMO TRUE O FALSE-USO EXPLICITO DE setf()\n";
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Deseamos mostrar el resultado de evaluar expresiones logicas:                                                            //
     // El resultado de evaluar la expresion ( 3 > 2 ) es: true                                                                  // 
     // El resultado de evaluar la expresion ( 3 < 2 ) es: false                                                                 // 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-
     std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << ( 3 > 2 ) << std::endl;
     std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << true << std::endl;
     std::cout << "El resultado de evaluar ( 3 < 2 ) es: " << ( 3 < 2  ) << std::endl;
     std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << false << std::endl;
-    
 
     std::cout.setf(std::ios_base::boolalpha);
     std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << ( 3 > 2 ) << std::endl;
@@ -112,12 +109,29 @@ int main()
     std::cout << "El resultado de evaluar ( 3 < 2 ) es: " << ( 3 < 2  ) << std::endl;
     std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << false << std::endl;
     
-    // std::cout << "RETORNO: " << std::cout.setf(std::ios_base::boolalpha) << std::endl;
-    // std::cout.unsetf(std::ios_base::boolalpha);
-    // std::cout << "mostrar true o false"<< std::endl ; 
-    // std::cout << true << std::endl;
-    // std::cout << (3 == 2 ) << std::endl;
-    // std::cout << "RETORNO: " << std::cout.setf(std::ios_base::boolalpha) << std::endl;
+    std::cout << "\n------------------------------------------------------------MANIPULADORES ESTANDAR-USO IMPLICITO DE setf()\n";
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Deseamos mostrar el resultado de evaluar expresiones logicas:                                                            //
+    // El resultado de evaluar la expresion ( 3 > 2 ) es: true                                                                  // 
+    // El resultado de evaluar la expresion ( 3 < 2 ) es: false                                                                 // 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << ( 3 > 2 ) << std::endl;
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << true << std::endl;
+    std::cout << "El resultado de evaluar ( 3 < 2 ) es: " << ( 3 < 2  ) << std::endl;
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << false << std::endl;
+
+    std::cout << std::boolalpha;
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << ( 3 > 2 ) << std::endl;
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << true << std::endl;
+    std::cout << "El resultado de evaluar ( 3 < 2 ) es: " << ( 3 < 2  ) << std::endl;
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << false << std::endl;
+
+    std::cout << std::noboolalpha;
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << ( 3 > 2 ) << std::endl;
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << true << std::endl;
+    std::cout << "El resultado de evaluar ( 3 < 2 ) es: " << ( 3 < 2  ) << std::endl;
+    std::cout << "El resultado de evaluar ( 3 > 2 ) es: " << false << std::endl;
+
     std::cout << "\n---------------------------------------------------------------------------------MANIPULADORES ADICIONALES\n";
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Estamos construyendo una agenda telefonica                                                                               //
@@ -128,7 +142,7 @@ int main()
     //                                               Ana Ortiz     759235585                                                    //
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     std::cout << "ANCHO DE CAMPO:" << std::endl;
-
+    std::cout<< std::setw(18) <<"NOMBRE" << "TELEFONO" << std::endl;
     std::cout<< std::setw(18) <<"NOMBRE" << std::setw(13) << "TELEFONO" << std::endl;
     std::cout<< std::setw(18) <<"Franz Beltran" << std::setw(13) << "75239368" << std::endl;
     std::cout<< std::setw(18) <<"Juan Peredo" << std::setw(13) << "75239542" << std::endl;
@@ -144,6 +158,7 @@ int main()
     //                                              Ana Ortiz: $*59235585                                                       //
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     std::cout << "CARACTER DE RELLENO:" << std::endl;
+    std::cout<< std::setw(18) << std::setfill('*') <<"Franz Beltran: $" << std::setw(13) << 8942 << std::setfill(' ') << std::endl;
 
     std::cout<< std::setw(18) <<"NOMBRE" << std::setw(13) << "TELEFONO" << std::endl;
     std::cout<< std::setw(18) <<"Franz Beltran: $" << std::setw(13) << std::setfill('*') << "8942" << std::setfill(' ') << std::endl;
